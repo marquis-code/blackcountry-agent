@@ -415,15 +415,17 @@ import { useGetRoomChats } from "@/composables/modules/messages/fetchRoomMessage
 import { useWebSocket } from "@/composables/modules/messages/sockets";
 import avatar from '@/assets/icons/user-avatar.svg'
 
-// Composables
-const { loadingActiveChats, activeChatsList } = useGetActiveChats();
-const { getRoomChats, loadingRoomChats, roomChatsList } = useGetRoomChats();
 const {
   messages,
   newMessage,
   isConnected,
   sendMessage
 } = useWebSocket();
+
+// Composables
+const { loadingActiveChats, activeChatsList } = useGetActiveChats();
+const { getRoomChats, loadingRoomChats, roomChatsList } = useGetRoomChats();
+
 
 definePageMeta({
   middleware: 'auth'

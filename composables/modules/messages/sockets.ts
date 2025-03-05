@@ -261,7 +261,12 @@ export const useWebSocket = () => {
     //   }
     // });
     socket.value.on("message.new", async (message: any) => {
-      console.log("New message receivedssssssss:", message.message);
+      showToast({
+        title: "Success",
+        message: "You have a new Message",
+        toastType: "success",
+        duration: 3000                                                                     
+      });
       await fetchInitialMessages();
       if (message && !messages.value.some(msg => msg.id === message?.message?.id)) {
         const newMessage = {
